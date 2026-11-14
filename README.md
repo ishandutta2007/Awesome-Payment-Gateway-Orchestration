@@ -61,7 +61,7 @@ Commercial, cloud-hosted Payment Gateways and enterprise platforms featuring int
 
 Community-driven, self-hosted, and transparent payment orchestration platforms, routing libraries, and crypto processors. Sorted descending by GitHub stargazers count. 🌟
 
-| Project | GitHub Stars ⭐️ | Stack & Architecture 🛠️ | License 📜 | Best Use Case & Capabilities 🚀 |
+| Project | GitHub_Stars ⭐️ | Stack & Architecture 🛠️ | License 📜 | Best Use Case & Capabilities 🚀 |
 |---|---|---|---|---|
 | **[Juspay Hyperswitch](https://github.com/juspay/hyperswitch)** | [![Stars](https://img.shields.io/github/stars/juspay/hyperswitch?style=social&color=white)](https://github.com/juspay/hyperswitch/stargazers) | **Rust** / Composable Microservices | Apache-2.0 | **Production-grade Payment Orchestrator**: Connects 200+ payment methods & 50+ PSPs via a single API; DSL-based dynamic routing, automated smart retries (+2-5% auth uplift), vendor-neutral card vault, and horizontal scaling to 5,000 TPS. |
 | **[BTCPay Server](https://github.com/btcpayserver/btcpayserver)** | [![Stars](https://img.shields.io/github/stars/btcpayserver/btcpayserver?style=social&color=white)](https://github.com/btcpayserver/btcpayserver/stargazers) | **C# / .NET Core** | MIT | **Non-Custodial Crypto Gateway**: Self-hosted Bitcoin & Lightning Network payment processor with zero processing fees, direct merchant wallet settlements, automated invoicing, and no third-party custodian. |
