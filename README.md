@@ -1,146 +1,130 @@
-# Awesome-Payment-Gateway-Orchestration
+<p align="center">
+  <img src="./assets/banner.svg" alt="Awesome Payment Gateway Orchestration" width="100%" />
+</p>
 
-# Awesome Payment Gateway Orchestration
+# 🌐 Awesome Payment Gateway Orchestration 💳✨
 
-> A curated list of top Payment Gateway Orchestration platforms — both SaaS/Hosted commercial gateways and open-source alternatives for routing transactions across multiple providers, optimizing authorization rates, and managing payment operations.
-> 🌟 Star this repo if you find it useful! 🌟
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ishandutta2007/Awesome-Payment-Processing-Gateway/pulls)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ishandutta2007/Awesome-Payment-Processing-Gateway)
 
----
-
-## 📋 Table of Contents
-
-- [SaaS / Hosted Platforms](#-saas--hosted-platforms)
-  - [Stripe](#stripe)
-  - [Adyen](#adyen)
-  - [PayPal Braintree](#paypal-braintree)
-  - [Checkout.com](#checkoutcom)
-  - [Worldpay](#worldpay)
-  - [CyberSource](#cybersource)
-  - [Mollie](#mollie)
-- [Open-Source Software](#-open-source-software)
-  - [Hyperswitch](#hyperswitch)
-  - [python-getpaid-core](#python-getpaid-core)
-  - [Open Orchestrator](#open-orchestrator)
+> 🚀 A curated list of top **Payment Gateway Orchestration** platforms, dynamic routing engines, cascading retry systems, and multi-PSP aggregators — featuring enterprise SaaS providers alongside self-hosted, open-source alternatives.
+> 
+> 🌟 **Star this repository if you find it helpful!** 🌟
 
 ---
 
-## 🟦 SaaS / Hosted Platforms
+## 📑 Table of Contents
 
-Commercial, cloud-hosted Payment Gateway platforms with orchestration capabilities. These are not open-source but are included as reference points for feature comparison.
-
-### Stripe
-**Type:** Developer-first payments with multi-provider orchestration via Connect
-Stripe provides a unified API for accepting payments, managing subscriptions, and handling payouts. While Stripe itself is a single gateway, its **Stripe Connect** product enables platforms to orchestrate payments across connected accounts and multiple providers. It is the benchmark against which open-source orchestrators like Hyperswitch are measured [citation:7].
-
-### Adyen
-**Type:** Enterprise gateway with direct network connections
-Adyen provides a single platform for accepting payments across online, in-person, and mobile channels, with direct connections to major card networks. It is positioned for enterprises wanting unified commerce and global reach with a single provider. Adyen's platform includes intelligent routing and retry logic within its own ecosystem.
-
-### PayPal Braintree
-**Type:** PayPal-owned gateway with drop-in UI and multi-method support
-Braintree (a PayPal service) provides card and digital wallet processing with SDKs for web and mobile. It is known for its Drop-in UI, which simplifies PCI compliance, and is often chosen by businesses already in the PayPal ecosystem. Braintree can function as a single gateway or be orchestrated alongside other providers.
-
-### Checkout.com
-**Type:** Enterprise gateway with intelligent acceptance
-Checkout.com provides payment processing with AI-driven acceptance optimization, covering cards, digital wallets, and local payment methods. It is positioned for enterprises wanting granular control over authorization rates and cost optimization within its own platform.
-
-### Worldpay
-**Type:** Global acquirer with dynamic routing
-Worldpay provides payment processing with dynamic routing capabilities that react to network conditions and issuer behavior in real time. It is a long-standing global acquirer, often used alongside orchestration layers for multi-provider strategies.
-
-### CyberSource
-**Type:** Visa-owned gateway with enterprise fraud and orchestration
-CyberSource (Visa) provides payment management, fraud prevention, and orchestration capabilities for enterprises. It is often used as a primary gateway with routing logic built into its Decision Manager product.
-
-### Mollie
-**Type:** European gateway with simple API
-Mollie provides payment processing for European businesses with a straightforward API and support for local payment methods. It is positioned for SMBs and mid-market companies wanting simple integration without complex orchestration.
+- [🔍 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [🏢 SaaS & Hosted Payment Platforms](#-saas--hosted-payment-platforms)
+- [💻 Open-Source Orchestrators & Gateways](#-open-source-orchestrators--gateways)
+- [📊 Feature Comparison at a Glance](#-feature-comparison-at-a-glance)
+- [🎯 Key Selection Criteria & Architectural Patterns](#-key-selection-criteria--architectural-patterns)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
 
 ---
 
-## 🟩 Open-Source Software
+## 🔍 Sector Overview & Market Dynamics
 
-Self-hosted, community-driven Payment Gateway Orchestration tools. The open-source ecosystem is **anchored by Hyperswitch** as the leading orchestration platform, with framework-specific libraries for narrower use cases.
+The global **Payment Orchestration Platform (POP)** market is estimated at **$2.85B – $3.33B in 2026** and projected to surge past **$7B – $15B+ by 2030** (growing at an estimated 18–24% CAGR), catalyzed by surging cross-border eCommerce, real-time payment rails (Pix, UPI, FedNow), and complex regional compliance mandates (such as PCI DSS v4.0). 📈
 
-### Hyperswitch
-**Stack:** Rust | **License:** Apache-2.0
-
-Hyperswitch (by Juspay) is the leading open-source **payment orchestration platform**, with **43k+ GitHub stars** and active development [citation:7][citation:11]. It is positioned as an open, composable payments platform that connects to multiple payment, payout, fraud, vault, and tokenization providers through a single API [citation:4][citation:9].
-
-Key orchestration capabilities include:
-- **Intelligent routing**: Dynamic switching across processors, card networks, and rails based on cost, authorization rates, and configurable rules [citation:9]
-- **Smart retries**: Automatic retry of soft declines on secondary processors, with reported auth rate uplift of 2-5% [citation:12]
-- **Revenue recovery**: Built-in fallback logic and retry mechanisms to reduce churn [citation:7]
-- **Cost observability**: Unified fee intelligence across providers, including IC++ cost reduction [citation:9]
-- **Vault service**: PSP-agnostic tokenization that detaches stored cards from any specific processor, enabling true portability [citation:12]
-- **200+ connectors** covering 150+ payment methods with zero development effort [citation:9]
-- **Self-hosted or SaaS**: Deploy on your own infrastructure for full data sovereignty, with "Bring Your Own Cloud" support on Kubernetes or VPC [citation:12]
-- **PCI-DSS compliant**: Enterprise-grade security model built on Juspay's 12+ years of payment infrastructure experience processing 300M+ daily transactions [citation:4]
-
-The architecture is horizontally scalable to ~5K TPS, with stateless service layers, multi-connector redundancy, and active-active regional topology [citation:4]. **Important consideration:** Self-hosting means you own uptime, security, and PCI compliance—requires engineering investment to deploy and maintain [citation:11].
-
-**Best for:** Businesses wanting full control over their payment orchestration stack, with the engineering bandwidth to self-host and customize routing logic, vaulting, and reconciliation.
-
-### python-getpaid-core
-**Stack:** Python | **License:** MIT
-
-python-getpaid-core is the framework-agnostic foundation of the Getpaid ecosystem, providing abstract interfaces, a semantic payment update engine, and a plugin registry for building payment systems without coupling to a specific web framework or provider [citation:5].
-
-Key characteristics:
-- **BaseProcessor**: Abstract base class for implementing payment gateway plugins, with methods for transaction preparation, callback handling, charging, and refunds
-- **PaymentFlow**: Manages payment lifecycle using semantic payment update objects, ensuring strict state transitions (NEW → PREPARED → PAID)
-- **PluginRegistry**: Central service for discovering and managing payment processors registered via `getpaid.backends` entry points
-- **State Engine**: Applies semantic payment and fraud events, merges provider metadata, and tracks idempotent provider event IDs
-- **Framework wrappers**: Official integrations for Django, Litestar, and FastAPI
-- **Processor plugins**: Available for PayU, Paynow, BitPay, and Przelewy24
-
-**Important note:** The 3.0.0a4 release is a **pre-release** and may not be stable for production use [citation:5]. It is a foundation for building payment processing rather than a turnkey orchestration platform.
-
-**Best for:** Python developers building custom payment integrations who want a framework-agnostic core with a semantic state engine and plugin architecture, accepting pre-release maturity.
-
-### Open Orchestrator
-**Stack:** TypeScript | **License:** Open Source (GitHub)
-
-Open Orchestrator (jafaguiarg/open-orchestrator) is a TypeScript tool aimed at providing connection with multiple payment processors (Stripe, Adyen, Braintree) from a single API [citation:14]. It is listed as a payment-hub topic repository with 1 star, last pushed over 2 years ago. **Important:** The project appears to be inactive and should be evaluated carefully before any production consideration.
-
-**Best for:** Historical reference or as a starting point for understanding multi-processor orchestration patterns in TypeScript, not for production use.
+The sector is **moderately to highly fragmented**, rather than a winner-take-all monopoly:
+- **No Single PSP Dominance:** Because consumer payment methods remain hyper-fragmented across geographical corridors (e.g., UPI in India, Pix in Brazil, iDEAL/Carte Bancaire in Europe, digital wallets globally), no individual payment gateway can optimize acceptance rates or pricing globally on its own.
+- **Provider Coexistence:** Standalone agnostic orchestrators, enterprise cloud gateways (like Stripe, Adyen, and Checkout.com), and acquirer-independent open-source switches (such as Hyperswitch) actively coexist. Merchants systematically adopt multi-provider orchestration layers to safeguard against gateway outages, minimize interchange costs, and prevent vendor lock-in. 🛡️
 
 ---
 
-## 📊 Comparison at a Glance
+## 🏢 SaaS & Hosted Payment Platforms
 
-| Software | License | Stack | Multi-Provider Orchestration | Smart Routing | Self-Hosted | Best For |
-|----------|---------|-------|----------------------------|---------------|-------------|----------|
-| **Stripe** | Proprietary | Cloud | (Via Connect) | (Within Stripe) | ❌ | Developer-first single gateway |
-| **Adyen** | Proprietary | Cloud | (Within Adyen) | ✅ | ❌ | Enterprise unified commerce |
-| **Braintree** | Proprietary | Cloud | (Check) | ❌ | ❌ | PayPal ecosystem + drop-in UI |
-| **Checkout.com** | Proprietary | Cloud | (Within Checkout) | ✅ | ❌ | Intelligent acceptance |
-| **Worldpay** | Proprietary | Cloud | (Within Worldpay) | ✅ | ❌ | Global acquiring + routing |
-| **Hyperswitch** | Apache-2.0 | Rust | ✅ 200+ connectors | ✅ DSL-based | ✅ | Open-source orchestration |
-| **python-getpaid-core** | MIT | Python | (Plugin-based) | ❌ | ✅ | Framework-agnostic payment core |
-| **Open Orchestrator** | Open Source | TypeScript | (Check) | (Check) | ✅ | Inactive (not recommended) |
+Commercial, cloud-hosted Payment Gateways and enterprise platforms featuring intelligent routing, global checkout localization, and orchestration capabilities. Sorted descending by company scale (market capitalization / enterprise valuation / parent company valuation). 💼
+
+| Platform | Valuation / Revenue Scale 📈 | Starting Pricing Tier 💳 | Free Tier / Trial Limit ⏱️ | Orchestration & Core Strengths ⚙️ |
+|---|---|---|---|---|
+| **[Visa CyberSource](https://www.cybersource.com)** | **~$600B+** (Visa Parent Mkt Cap; CyberSource acquired for $2B) | **$0.10 – $0.20** per transaction gateway fee + custom acquiring markup | **Merchant Test Sandbox only**; No live transaction free tier or free trial days | Enterprise-grade fraud management (*Decision Manager*), token management service, 3-D Secure 2.0 routing, and acquirer-agnostic connections. |
+| **[PayPal Braintree](https://www.braintreepayments.com)** | **~$65B – $70B+** (PayPal Parent Mkt Cap; ~$30B+ net rev) | **2.59% + $0.49** per standard US card transaction | **Full API Sandbox only**; No live free transaction volume or free trial days | Universal Drop-in UI for PCI compliance, deep PayPal & Venmo native integration, global multi-currency checkout, and multi-processor vaulting. |
+| **[Stripe](https://stripe.com)** | **~$70B** valuation (processed >$1T transaction volume) | **2.9% + $0.30** per successful domestic card charge | **Developer Sandbox with test clock**; No live free transaction quota or production trial | Developer-first API standard; multi-processor routing via *Stripe Connect*, unified billing, global payouts, radar fraud prevention, and network tokens. |
+| **[Adyen](https://www.adyen.com)** | **~$40B – $45B** Mkt Cap (€1.9B+ net revenue) | **€0.11 ($0.12)** fixed processing fee + regional Interchange++ | **Test Account Sandbox environment**; Zero live free transaction volume or trial period | Single-platform full-stack gateway, acquirer, and POS processor; automated smart routing, direct card network connections, and unified commerce data. |
+| **[Worldpay](https://www.worldpay.com)** | **~$18.5B** valuation (GTCR majority acquisition; $2T+ volume) | **Interchange + 0.15% to 0.60% + $0.10 – $0.20** (or ~1.5% - 2.75% blended) | **Developer Testing Sandbox**; No free live tier or promotional trial days | Heavyweight global acquiring infrastructure, intelligent transaction routing, fallback recovery, and multi-currency settlement across 146+ countries. |
+| **[Checkout.com](https://www.checkout.com)** | **~$11B** valuation (peak $40B valuation) | **Interchange++ with ~0.95% + €0.02** starting acquirer/gateway markup | **Free Developer Sandbox**; 100% free live processing exclusively for registered non-profit charities | Enterprise AI-powered *Intelligent Acceptance*, network token optimization, domestic processing in 50+ countries, and granular cost transparency. |
+| **[Mollie](https://www.mollie.com)** | **~$6.5B** valuation (€100M+ revenue) | **€0.25 + 1.2% – 1.8%** per EU card transaction (iDEAL at fixed €0.29) | **Free Staging Sandbox**; Pay-as-you-go with 0 live free volume or free trial days | Effortless European localized payments (iDEAL, Bancontact, SEPA, Klarna), plug-and-play e-commerce integrations, and transparent flat fees with no monthly lock-in. |
+
+---
+
+## 💻 Open-Source Orchestrators & Gateways
+
+Community-driven, self-hosted, and transparent payment orchestration platforms, routing libraries, and crypto processors. Sorted descending by GitHub stargazers count. 🌟
+
+| Project | GitHub Stars ⭐️ | Stack & Architecture 🛠️ | License 📜 | Best Use Case & Capabilities 🚀 |
+|---|---|---|---|---|
+| **[Juspay Hyperswitch](https://github.com/juspay/hyperswitch)** | [![Stars](https://img.shields.io/github/stars/juspay/hyperswitch?style=social&color=white)](https://github.com/juspay/hyperswitch/stargazers) | **Rust** / Composable Microservices | Apache-2.0 | **Production-grade Payment Orchestrator**: Connects 200+ payment methods & 50+ PSPs via a single API; DSL-based dynamic routing, automated smart retries (+2-5% auth uplift), vendor-neutral card vault, and horizontal scaling to 5,000 TPS. |
+| **[BTCPay Server](https://github.com/btcpayserver/btcpayserver)** | [![Stars](https://img.shields.io/github/stars/btcpayserver/btcpayserver?style=social&color=white)](https://github.com/btcpayserver/btcpayserver/stargazers) | **C# / .NET Core** | MIT | **Non-Custodial Crypto Gateway**: Self-hosted Bitcoin & Lightning Network payment processor with zero processing fees, direct merchant wallet settlements, automated invoicing, and no third-party custodian. |
+| **[Omnipay](https://github.com/thephpleague/omnipay)** | [![Stars](https://img.shields.io/github/stars/thephpleague/omnipay?style=social&color=white)](https://github.com/thephpleague/omnipay/stargazers) | **PHP** / Modular Architecture | MIT | **Multi-Gateway PHP Abstraction**: Clean, modern, and unit-tested interface for payment processing across dozens of payment gateways (Stripe, PayPal, Authorize.Net, Worldpay) with a consistent, expressive API. |
+| **[Kill Bill](https://github.com/killbill/killbill)** | [![Stars](https://img.shields.io/github/stars/killbill/killbill?style=social&color=white)](https://github.com/killbill/killbill/stargazers) | **Java** / OSGi Modular Plugins | Apache-2.0 | **Subscription Billing & Multi-PSP Engine**: Enterprise recurring billing, subscription catalog management, and payment routing engine supporting multiple concurrent processor plugins with custom retry schedules. |
+| **[ActiveMerchant](https://github.com/activemerchant/active_merchant)** | [![Stars](https://img.shields.io/github/stars/activemerchant/active_merchant?style=social&color=white)](https://github.com/activemerchant/active_merchant/stargazers) | **Ruby** / Rails Monolith Heritage | MIT | **Classic Ruby Gateway Abstraction**: Extracted from Shopify; provides unified API wrappers for over 100+ payment gateways, simplifying card authorizations, captures, and refunds across heterogeneous providers. |
+| **[Spree Gateway](https://github.com/spree/spree_gateway)** | [![Stars](https://img.shields.io/github/stars/spree/spree_gateway?style=social&color=white)](https://github.com/spree/spree_gateway/stargazers) | **Ruby** / Spree Commerce Module | BSD-3-Clause | **E-Commerce Multi-Gateway Plugin**: Official gateway aggregator for the Spree commerce ecosystem, wrapping multiple processors (Stripe, Braintree, Authorize.Net) inside standard e-commerce state machines. |
+| **[Paymux](https://github.com/velixio/paymux)** | [![Stars](https://img.shields.io/github/stars/velixio/paymux?style=social&color=white)](https://github.com/velixio/paymux/stargazers) | **Go** / Single Binary Deployment | MIT | **Lightweight Self-Hosted Orchestrator**: Single Go binary routing regional & global gateways (Stripe, Razorpay, Cashfree, PayU, Whop) behind a unified API, double-entry ledger, and unified webhook multiplexer. |
+| **[python-getpaid-core](https://github.com/django-getpaid/python-getpaid-core)** | [![Stars](https://img.shields.io/github/stars/django-getpaid/python-getpaid-core?style=social&color=white)](https://github.com/django-getpaid/python-getpaid-core/stargazers) | **Python** / Framework-Agnostic Core | MIT | **Semantic Python Payment Engine**: Abstract base interfaces and state-machine transitions (NEW → PREPARED → PAID) with adapters for Django, FastAPI, and Litestar, plus processor plugins for PayU, Przelewy24, and BitPay. |
+
+---
+
+## 📊 Feature Comparison at a Glance
+
+| Software / Solution | Deployment Model | Open Source? | Multi-PSP Orchestration | Dynamic Smart Routing | Zero Vendor Lock-in Vault | Ideal Target Organization |
+|---|---|:---:|:---:|:---:|:---:|---|
+| **Visa CyberSource** | Cloud Hosted | ❌ | ✅ (Via Decision Mgr) | Acquirer-Dependent | Custom Vault | Large Global Enterprises, High-Risk Merchants |
+| **PayPal Braintree** | Cloud Hosted | ❌ | ⚠️ (PayPal Ecosystem) | ❌ | Limited | SMBs to Mid-Market, Web3 & PayPal heavy buyers |
+| **Stripe** | Cloud Hosted | ❌ | ⚠️ (Via Stripe Connect) | Internal Only | Proprietary Vault | Startups, SaaS, Global Marketplaces |
+| **Adyen** | Full-Stack Cloud | ❌ | ⚠️ (Inside Adyen Rail) | ✅ Native Engine | Unified Token | Omnichannel Retail, Enterprise Direct Acquirers |
+| **Worldpay** | Cloud Hosted | ❌ | ✅ Global Acquiring | ✅ Dynamic Rules | Acquirer Vault | High-Volume Retailers, Global POS/Online |
+| **Checkout.com** | Cloud Hosted | ❌ | ⚠️ (Inside Checkout) | ✅ AI Acceptance | Network Tokens | Scaling Tech, Cross-Border E-Commerce |
+| **Mollie** | Cloud Hosted | ❌ | ❌ (Single Gateway) | ❌ | Standard | European Startups, SMB E-commerce Stores |
+| **Juspay Hyperswitch** | Self-Hosted / BYOC | ✅ | ✅ 50+ Processors | ✅ Rule & Cost DSL | ✅ Open Vault | FinTechs, Enterprise Scale, Cost-Conscious Teams |
+| **BTCPay Server** | Self-Hosted | ✅ | ⚠️ (Crypto Rails) | ❌ | Non-Custodial | Privacy Advocates, Crypto-Native Retailers |
+| **Omnipay** | Self-Hosted Library | ✅ | ✅ Via Drivers | ❌ Code-level | ❌ | PHP & Laravel Application Engineers |
+| **Kill Bill** | Self-Hosted Server | ✅ | ✅ Plugin Driven | ⚠️ Rule Config | Plugin Dependent | Subscription Businesses, Custom SaaS Invoicing |
+| **ActiveMerchant** | Ruby Gem Library | ✅ | ✅ Via Drivers | ❌ Code-level | ❌ | Ruby on Rails Monoliths, Custom Storefronts |
+| **Paymux** | Self-Hosted Binary | ✅ | ✅ Unified API | ⚠️ Webhook Ledger | Internal Ledger | Developers needing minimal-footprint Go routing |
+
+---
+
+## 🎯 Key Selection Criteria & Architectural Patterns
+
+When architecting a fault-tolerant payment stack, engineering and finance teams evaluate solutions along four structural pillars:
+
+1. **Routing Intelligence & Cascading Retries (Auth Rate Optimization):**
+   * *Soft Decline Recovery:* Automatically retrying a card declined due to temporary issuer downtime or network glitches against a secondary acquirer can recover **2% to 5% of top-line revenue**.
+   * *Cost & Currency Routing:* Routing domestic transactions through local acquirers (e.g., Cartes Bancaires in France or Girocard in Germany) drastically slashes cross-border interchange markups.
+2. **Payment Card & Credential Vaulting (Portability):**
+   * Storing credit card tokens within a single proprietary gateway creates severe vendor lock-in. Independent token vaults (like Hyperswitch Vault or third-party tokenizers) decouple tokens from processors, allowing seamless switching without merchant card re-entry.
+3. **Reconciliation & Ledgering:**
+   * Multi-processor setups multiply settlement complexity. Platforms providing unified fee observability, dispute aggregation, and double-entry accounting reconciliation eliminate manual financial operations.
+4. **Compliance & Maintenance Overhead:**
+   * While open-source platforms like Hyperswitch give complete control and zero volume-based software markups, self-hosting requires maintaining high availability (99.999%), PCI DSS Level 1 audits, HSM key management, and continuous API connector updates.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you know of an open-source Payment Gateway Orchestration tool that should be listed here, please open a pull request with:
+Contributions, feedback, and additions are welcome! 💡
 
-- Project name and URL
-- Brief description (1–2 sentences)
-- Stack and license
-- Why it stands out
-
-Please ensure the project is actively maintained (releases within the last 12 months) and genuinely open-source.
-
-**Note on the open-source ecosystem:** Payment orchestration is a complex domain where **Hyperswitch is the only mature, production-ready open-source option** [citation:4][citation:7][citation:11]. It provides the full breadth of orchestration capabilities—routing, retries, vaulting, cost observability, and reconciliation—that commercial gateways offer within their own ecosystems. The **python-getpaid-core** library offers a narrower foundation for building custom payment flows in Python [citation:5]. No other actively maintained open-source project replicates Hyperswitch's connector coverage or enterprise-scale reliability. For teams without the engineering capacity to self-host and maintain payment infrastructure, commercial gateways with built-in routing (Adyen, Checkout.com, Worldpay) remain the practical choice [citation:3][citation:8].
+If you know of a production-tested open-source Payment Orchestration tool, unified driver library, or platform that should be included:
+1. Fork this repository 🍴
+2. Create your feature branch (`git checkout -b feature/new-payment-tool`)
+3. Ensure the project is active (commits/releases within the past 12 months) and open-source
+4. Commit your changes (`git commit -m "Add New Payment Orchestrator"`)
+5. Push to the branch and open a Pull Request! 🎉
 
 ---
 
 ## 📄 License
 
-This list is released under CC0 1.0 Universal (Public Domain). The software projects listed retain their respective licenses.
+This repository and curated compilation are released under the [Creative Commons Zero v1.0 Universal](LICENSE) (CC0 1.0 - Public Domain). Individual projects mentioned retain their respective licenses and trademarks.
 
 ---
 
-⭐ **If this list helped you discover a useful tool, please star the repo!** ⭐
+<p align="center">
+  <sub>Built with ❤️ for payment engineers, fintech architects, and commerce builders worldwide. ⭐ Star us on GitHub!</sub>
+</p>
