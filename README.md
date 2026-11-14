@@ -4,10 +4,12 @@
 
 # 🌐 Awesome Payment Gateway Orchestration 💳✨
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+<a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+[![Awesome](https://awesome.re/badge.svg)](https://github.com/ishandutta2007/Awesome-Awesome-Awesome)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ishandutta2007/Awesome-Payment-Processing-Gateway/pulls)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ishandutta2007/Awesome-Payment-Processing-Gateway)
+<a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
 
 > 🚀 A curated list of top **Payment Gateway Orchestration** platforms, dynamic routing engines, cascading retry systems, and multi-PSP aggregators — featuring enterprise SaaS providers alongside self-hosted, open-source alternatives.
 > 
@@ -23,6 +25,8 @@
 - [📊 Feature Comparison at a Glance](#-feature-comparison-at-a-glance)
 - [🎯 Key Selection Criteria & Architectural Patterns](#-key-selection-criteria--architectural-patterns)
 - [🤝 Contributing](#-contributing)
+- [💖 Support](#-support)
+- [📈 Star History](#-star-history)
 - [📄 License](#-license)
 
 ---
@@ -116,6 +120,24 @@ If you know of a production-tested open-source Payment Orchestration tool, unifi
 3. Ensure the project is active (commits/releases within the past 12 months) and open-source
 4. Commit your changes (`git commit -m "Add New Payment Orchestrator"`)
 5. Push to the branch and open a Pull Request! 🎉
+
+---
+
+## 💖 Support
+
+Thank you for exploring and utilizing this curated directory! If you find this project valuable for your work, research, or product architecture, please consider supporting the project:
+
+- 🌟 **Star** this repository to help boost visibility for the community!
+- 🍴 **Fork** the project to contribute additions and improvements.
+- 📢 **Share** it with your engineering and fintech networks.
+- ☕ **Buy a Coffee / Sponsor**: Support ongoing maintenance and curation on the [GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007).
+
+Your support is deeply appreciated! ❤️
+
+---
+
+##  Star History
+[![Star History Chart](https://www.star-history.com/svg?repos=ishandutta2007/Awesome-Payment-Gateway-Orchestration&type=date&legend=top-left)](https://www.star-history.com/#ishandutta2007/Awesome-Payment-Gateway-Orchestration&type=date&legend=top-left)
 
 ---
 
